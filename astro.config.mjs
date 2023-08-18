@@ -6,7 +6,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://shba007.github.io',
-  base: '/ai-guide',
+  site: 'https://ai-guide.onrender.com',
   integrations: [tailwind(), mdx(), sitemap()]
 });
