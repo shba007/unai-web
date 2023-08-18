@@ -1,10 +1,11 @@
 import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
+import tailwind from "@astrojs/tailwind";
+import mdx from "@astrojs/mdx";
 
-import sitemap from '@astrojs/sitemap';
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+  site: 'https://ai-guide.com',
+  integrations: [tailwind(), mdx(), sitemap()]
 });

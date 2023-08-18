@@ -1,0 +1,31 @@
+---
+import FeatureCard from './FeatureCard.astro';
+---
+
+<section class="flex flex-col gap-5 min-h-screen">
+	<h3 class="text-4xl font-semi-bold">
+		Become 10x
+		<span class="relative">
+			<!-- <div class="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-primary-400 to-[#3890F8] overflow-hidden -z-10"></div> -->
+			<span class="text-gradient"> Productive</span>
+		</span>
+	</h3>
+
+	<p class="text-lg max-w-4xl leading-relaxed opacity-60">
+		How to use latest AI tools and techniques to increase your productivity. In the current world where Time is money and efficiency is the key AI Guide gives a
+		guided path to maximize output
+	</p>
+	<div class="flex justify-between mt-12">
+		<FeatureCard title="Optimization" describtion="Optimize your prompts to speed up generation process"/>
+		<FeatureCard title="Optimization" describtion="Optimize your prompts to speed up generation process"/>
+		<FeatureCard title="Optimization" describtion="Optimize your prompts to speed up generation process"/>
+	</div>
+</section>
+
+<style scoped>
+	.text-gradient {
+		background: -webkit-linear-gradient(45deg, #38bdf8, #3890f8 80%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+</style>

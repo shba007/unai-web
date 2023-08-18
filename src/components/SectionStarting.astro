@@ -1,0 +1,15 @@
+---
+import ActionButton from './ActionButton.astro';
+---
+
+<section class="flex justify-between items-center min-h-[50vh]">
+	<div>
+		<h6 class="uppercase">Getting Started</h6>
+		<h2 class="text-4xl font-semi-bold">Start your AI Journey</h2>
+		<p class="text-lg mt-3">Learn everything you need to know, from beginner to master</p>
+	</div>
+	<div class="flex gap-4">
+		<ActionButton title="Get Started" />
+		<ActionButton title="Explore Examples" active={false} />
+	</div>
+</section>
