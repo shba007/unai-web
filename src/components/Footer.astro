@@ -3,10 +3,10 @@
 import Logo from '../Icons/logo.svg';
 ---
 
-<footer class="relative w-[98.5vw] overflow-hidden">
-	<div class="relative flex items-center justify-center">
-		<svg class="absolute left-0 right-0" viewBox="0 0 1439 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<line x1="-1" y1="46" x2="1439" y2="46" stroke="#2D2F34" stroke-width="2"></line>
+<footer class="overflow-hidden">
+	<div class="flex justify-center items-center">
+		<svg class="absolute w-screen" viewBox="0 0 1439 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<line x1="0" y1="46" x2="1439" y2="46" stroke="#2D2F34" stroke-width="2"></line>
 			<circle cx="720" cy="46" r="46" fill="url(#gradient)"></circle>
 			<defs>
 				<radialGradient id="gradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(720 46) rotate(90) scale(61.5 49.6975)">
@@ -16,7 +16,10 @@ import Logo from '../Icons/logo.svg';
 			</defs>
 		</svg>
 		<!-- <Icon name="logo" class="w-7 z-10" /> -->
-		<img src={Logo} class="w-7 z-10" />
+		<img
+			src={Logo}
+			class="w-7 z-10 before:content-[''] before:absolute before:rounded-[50%] before:w-[150px] before:bg-alert-400 before:aspect-square before:z-10"
+		/>
 	</div>
 	<ul class="flex justify-between items-center mx-auto py-4 max-w-[76rem] text-[0.875rem] text-white/60">
 		<li>

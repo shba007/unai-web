@@ -6,14 +6,14 @@ import Logo from '../Icons/logo.svg';
 
 <header>
 	<!-- relative -left-[5.5rem] w-screen -->
-	<nav class="absolute top-0 left-0 right-0 flex justify-between items-center gap-6 mx-auto py-5 max-w-[76rem]">
+	<nav class="absolute top-0 left-0 right-0 flex justify-between items-center gap-6 mx-auto py-5 px-4 md:px-8 max-w-[76rem]">
 		<a href="/" class="flex gap-3">
 			<!-- <Icon name="logo" class="w-8 scale-125" /> -->
 			<img src={Logo} class="w-8 scale-125" />
-			<h2 class="text-lg">{SITE_TITLE}</h2>
+			<h2 class="hidden md:inline text-lg">{SITE_TITLE}</h2>
 		</a>
 		<!-- Routes -->
-		<ul class="relative flex gap-8 -translate-x-16">
+		<ul class="relative flex gap-8 md:-translate-x-16">
 			<li class="opacity-80 hover:opacity-100 transition-opacity">
 				<a href="/blog">Blogs</a>
 			</li>

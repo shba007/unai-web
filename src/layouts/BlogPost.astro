@@ -7,10 +7,11 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<main class="shrink flex flex-col items-stretch mx-auto mt-20 mb-3 max-w-[76rem] min-h-screen">
+<main class="shrink flex flex-col items-stretch mx-auto mt-14 mb-3 max-w-[76rem] min-h-screen">
 	<article class="w-full">
-		<img src={heroImage} class="w-full rounded-[0.625rem] aspect-[4.5] object-cover" />
-		<div class="flex justify-between mt-11 text-lg opacity-60">
+		<img src={heroImage} class="absolute left-0 w-screen aspect-[5/3] max-h-[20rem] object-cover" />
+		<img src={heroImage} class="invisible left-0 w-screen aspect-[5/3] max-h-[20rem]" />
+		<div class="flex justify-between mt-12 md:mt-8 opacity-60">
 			<FormattedDate date={pubDate} />
 			{
 				updatedDate && (
@@ -20,13 +21,24 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				)
 			}
 		</div>
-		<h1 class="text-3xl mt-4 max-w-[80%]">{title}</h1>
-		<p class="content pt-6 opacity-90"><slot /></p>
+		<h1 class="text-xl md:text-3xl mt-4 md:max-w-[80%]">{title}</h1>
+		<div class="content pt-2 leading-relaxed">
+			<slot />
+		</div>
 	</article>
 </main>
 
-<style>
-	h2 {
-		font-size: 1.25rem;
+<style is:global>
+	.content p {
+		@apply my-2 md:my-4 md:text-lg opacity-80 font-light;
+	}
+	.content h2 {
+		@apply text-xl font-semi-bold;
+	}
+	.content h4 {
+		@apply text-xl font-semi-bold;
+	}
+	.content img {
+		@apply mx-auto my-4 md:my-8 rounded-md w-full max-h-[18rem] aspect-video object-cover;
 	}
 </style>
