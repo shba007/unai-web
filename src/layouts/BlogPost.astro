@@ -11,34 +11,64 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<article class="w-full">
 		<img src={heroImage} class="absolute left-0 w-screen aspect-[5/3] max-h-[20rem] object-cover" />
 		<img src={heroImage} class="invisible left-0 w-screen aspect-[5/3] max-h-[20rem]" />
-		<div class="flex justify-between mt-12 md:mt-8 opacity-60">
-			<FormattedDate date={pubDate} />
-			{
-				updatedDate && (
-					<span class="text-base">
-						Last updated on <FormattedDate date={updatedDate} />
-					</span>
-				)
-			}
-		</div>
-		<h1 class="text-xl md:text-3xl mt-4 md:max-w-[80%]">{title}</h1>
-		<div class="content pt-2 leading-relaxed">
+		<!-- <h1 class="md:text-xl mt-4 md:max-w-[80%]">{title}</h1> -->
+		<div class="content mx-auto max-w-4xl leading-relaxed">
+			<div class="flex justify-between gap-8 mt-12 md:mt-8 mb-2 text-white/60">
+				<FormattedDate date={pubDate} />
+				{
+					updatedDate && (
+						<span class="text-base text-right">
+							Updated on <FormattedDate date={updatedDate} />
+						</span>
+					)
+				}
+			</div>
 			<slot />
 		</div>
 	</article>
 </main>
 
 <style is:global>
-	.content p {
-		@apply my-2 md:my-4 md:text-lg opacity-80 font-light;
+	.content h1 {
+		@apply my-4 text-2xl font-semi-bold;
 	}
 	.content h2 {
-		@apply text-xl font-semi-bold;
+		@apply my-3 text-xl font-semi-bold underline decoration-dashed underline-offset-8;
+	}
+	.content h3 {
+		@apply my-2 text-lg font-semi-bold;
 	}
 	.content h4 {
-		@apply text-xl font-semi-bold;
+		@apply my-1 text-lg font-semi-bold;
 	}
-	.content img {
+	.content p {
+		@apply my-2 md:my-4 md:text-[1.125rem] opacity-80 font-light;
+	}
+	.content > img {
 		@apply mx-auto my-4 md:my-8 rounded-md w-full max-h-[18rem] aspect-video object-cover;
+	}
+	.content aside {
+		@apply flex items-start gap-1 my-2 p-4 bg-dark-600/20 rounded;
+	}
+	.content aside > img {
+		@apply w-7;
+	}
+	.content aside > p {
+		@apply my-0;
+	}
+	.content strong {
+		@apply font-bold;
+	}
+	.content ol {
+		@apply list-decimal ml-8;
+	}
+	.content ul {
+		@apply list-disc ml-8;
+	}
+	.content a {
+		@apply underline underline-offset-1;
+	}
+	.content blockquote {
+		@apply border-l-4 border-primary-500 rounded pl-4;
 	}
 </style>

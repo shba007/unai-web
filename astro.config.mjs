@@ -6,6 +6,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ai-guide.shirsendu-bairag.dev',
+  site: 'https://ai-guide.shirsendu-bairagi.dev',
   integrations: [tailwind(), mdx(), sitemap()]
 });
