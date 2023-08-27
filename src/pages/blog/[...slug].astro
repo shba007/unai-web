@@ -21,7 +21,7 @@ const { Content } = await post.render();
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={post.data.heroImage} />
 	</head>
 	<body class="p-4 md:px-8 text-white bg-dark-400 overflow-x-hidden">
 		<Header />
