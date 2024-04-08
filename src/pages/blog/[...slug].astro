@@ -1,9 +1,7 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import Header from '../../components/Header.astro';
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -19,15 +17,8 @@ const { title, description } = post.data;
 const { Content } = await post.render();
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} image={post.data.heroImage} />
-	</head>
-	<body class="p-4 md:px-8 text-white bg-dark-400 overflow-x-hidden">
-		<Header />
-		<BlogPost {...post.data}>
-			<Content />
-		</BlogPost>
-		<Footer />
-	</body>
-</html>
+<DefaultLayout title={title} description={description}>
+	<BlogPostLayout {...post.data}>
+		<Content />
+	</BlogPostLayout>
+</DefaultLayout>

@@ -7,13 +7,13 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<main class="shrink flex flex-col items-stretch mx-auto mt-14 mb-3 max-w-[76rem] min-h-screen">
+<main class="shrink flex flex-col items-stretch mx-auto mt-20 mb-3 px-4 max-w-[76rem] min-h-screen">
 	<article class="w-full">
 		<img src={heroImage} class="absolute left-0 w-screen aspect-[5/3] max-h-[20rem] object-cover" />
-		<img src={heroImage} class="invisible left-0 w-screen aspect-[5/3] max-h-[20rem]" />
+		<div class="invisible aspect-[5/3] max-h-[20rem]"></div>
 		<!-- <h1 class="md:text-xl mt-4 md:max-w-[80%]">{title}</h1> -->
 		<div class="content mx-auto max-w-4xl leading-relaxed">
-			<div class="flex justify-between gap-8 mt-12 md:mt-8 mb-2 text-white/60">
+			<div class="flex justify-between gap-8 mt-10 md:mt-8 mb-2 text-white/60">
 				<FormattedDate date={pubDate} />
 				{
 					updatedDate && (

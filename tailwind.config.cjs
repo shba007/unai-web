@@ -1,19 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	darkMode: 'class',
 	theme: {
 		fontSize: {
-			'2xs': ['0.625rem', '0.75rem'],
 			xs: ['0.75rem', '0.875rem'],
-			sm: ['0.875rem', '1.09375rem'],
+			sm: ['0.875rem', '1.0625rem'],
 			base: ['1rem', '1.5rem'],
 			lg: ['1.25rem', '1.5625rem'],
 			xl: ['1.5rem', '1.875rem'],
 			'2xl': ['2rem', '2.5rem'],
 			'3xl': ['2.5rem', '3.125rem'],
-			'4xl': ['3rem', '3.75rem'],
-			'5xl': ['3.5rem', '4.375rem'],
-			'6xl': ['4.5rem', '5.625rem'],
+			'4xl': ['3rem', '3.625rem'],
+			'5xl': ['3.5rem', '4.1875rem'],
 		},
 		fontFamily: {
 			head: ['Source Sans Pro', 'sans-serif'],
