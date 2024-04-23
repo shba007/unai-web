@@ -154,9 +154,6 @@ export default defineConfig({
         },
       ]
     },
-    pwaAssets: {
-      config: true,
-    },
     workbox: {
       navigateFallback: '/',
       globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
