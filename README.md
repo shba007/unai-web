@@ -13,6 +13,5 @@
 
 ![Landing](public/previews/landing.webp)
 
-
 ### TODO
 - Dark/light Mode

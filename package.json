@@ -13,20 +13,20 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/mdx": "^2.3.1",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.4",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.6.4",
+    "@vite-pwa/astro": "^0.4.0",
+    "astro": "^4.7.0",
     "astro-google-analytics": "^1.0.3",
     "astro-icon": "^1.1.0",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
-    "@vite-pwa/astro": "^0.3.1"
+    "@changesets/cli": "^2.27.1"
   }
 }
