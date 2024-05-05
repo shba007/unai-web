@@ -1,9 +1,9 @@
 ---
-title: 'Generate answers from question papers using AI'
+title: "Generate answers from question papers using AI"
 description: "How can you get answers to your previous year's question paper using AI?"
-pubDate: 'Aug 19 2023'
-updatedDate: 'Aug 26 2023'
-heroImage: '/blog-1/hero.jpg'
+pubDate: "Aug 19 2023"
+updatedDate: "Aug 26 2023"
+heroImage: "/blog-1/hero.jpg"
 ---
 
 # How can you get answers to your previous year's question paper using AI?
@@ -363,4 +363,4 @@ If you are unable to see any clusters, or the points are very spread out you pro
 
 ## Feedback
 
-Give us Feedback by directly mailing us. Also If you spot any mistake in the post reach us via email. And if you have a topic in your mind about AI feel free to reach us, we will be happy to respond you.
+Give us Feedback by directly mailing us. Also If you spot any mistake in the post reach us via email at shirsendu2001@gmail.com. And if you have a topic in your mind about AI feel free to reach us, we will be happy to respond you.
