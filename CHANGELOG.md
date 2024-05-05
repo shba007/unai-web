@@ -1,5 +1,11 @@
 # ai-guide
 
+## 0.1.1
+
+### Patch Changes
+
+- b9a50f2: docs: readme updated
+
 ## 0.1.0
 
 ### Minor Changes
