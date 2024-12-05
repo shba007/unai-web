@@ -3,6 +3,7 @@
 <p>
 
 # AI Guide
+
 > An AI Guide Book
 
 <p align="center">
@@ -14,4 +15,5 @@
 ![Landing](public/previews/landing.webp)
 
 ### TODO
+
 - Dark/light Mode

@@ -1,9 +1,9 @@
 ---
-title: "Extract structured data from images using LLM"
-description: "How I use AI to extract structured data like JSON/ YML from Images?"
-pubDate: "May 01 2024"
-updatedDate: "May 01 2024"
-heroImage: "/blog-2/hero.jpg"
+title: 'Extract structured data from images using LLM'
+description: 'How I use AI to extract structured data like JSON/ YML from Images?'
+pubDate: 'May 01 2024'
+updatedDate: 'May 01 2024'
+heroImage: '/blog-2/hero.jpg'
 ---
 
 # How I use AI to extract structured data like JSON/ YML from Images?
@@ -16,7 +16,15 @@ But Here is the problem begins, so in traditional OCR you can easly extract the 
 
 ## Using LLM to extract and format text
 
-The solution is quite simple, using LLM to extarct and format text. So how this stratgy should work? There are a special type of LLMs called Multimodel LLMs. They can take multiple formates like text, image, audio as input and give text as output. 
+The solution is quite simple, using LVLM(Large Vision Language Model) to extract and format the text. So how this stratgy should work? There are a special type of Multimodel LLMs like LVLMs. They can take both formates like text, image as input and give text as output.
+
+Here is List of LVLM's As of now
+
+- InstructBLIP
+- MiniGPT-4
+- Gemini Pro
+- LLaVA
+- Qwen-VL
 
 ### Step 1: Lets try out a demo
 
@@ -29,7 +37,7 @@ Extract text from the image and print it in the below format. For the question a
 
 Format:
 {
-	"id": "20",
+	"id": "00",
 	"question": "{question}",
 	"options": [
 		"{option 1}",
@@ -48,7 +56,8 @@ It will look something like this.
 
 ![Request](/blog-2/section-1.png)
 
-After hitting send button we will get our output. which will look something like this
+After hitting send button we will get our output. which will look something like this.
+You can use also Gemini for this case
 
 ### Output
 
@@ -56,16 +65,9 @@ After hitting send button we will get our output. which will look something like
 {
   "id": "20",
   "question": "In Guildord's approach to intelligence, the ability to generate a variety of hypotheses in a given problem situation is known as",
-  "options": [
-    "Cognitive Memory",
-    "Convergent Production",
-    "Divergent Production",
-    "Mediational Memory"
-  ],
+  "options": ["Cognitive Memory", "Convergent Production", "Divergent Production", "Mediational Memory"],
   "answer": 3,
-  "tags": [
-    "psychology"
-  ]
+  "tags": ["psychology"]
 }
 ```
 
@@ -82,70 +84,63 @@ baseURL = https://llava.hliu.cc
 <!-- > GET /info -->
 
 Upload Image
+
 > POST /upload?upload_id=8mw3dxwtghj
-input -> body form data file
-output -> file path
+> input -> body form data file
+> output -> file path
 
 Check Upload Progess (optional)
+
 > GET /upload_progress?upload_id=8mw3dxwtghj
-output -> {"msg": "done"}
+> output -> {"msg": "done"}
 
 Add The prompt with the image path
+
 > POST /queue/join?
+
 ```json
 {
-    "data": [
-        null,
-        "what is the document in two word",
-        {
-            "path": "/nobackup/haotian/tmp/gradio/4b3f249dd60fab9dcf361035bb95cfb9ed680bf4/Expenses Tracker.jpg",
-            "url": "https://llava.hliu.cc/file=/nobackup/haotian/tmp/gradio 4b3f249dd60fab9dcf361035bb95cfb9ed680bf4/Expenses Tracker.jpg",
-            "orig_name": "Expenses Tracker.jpg"
-        },
-        "Default"
-    ],
-		"fn_index": 9,
-    "session_hash": "ec2walcbadh"
+  "data": [
+    null,
+    "what is the document in two word",
+    {
+      "path": "/nobackup/haotian/tmp/gradio/4b3f249dd60fab9dcf361035bb95cfb9ed680bf4/Expenses Tracker.jpg",
+      "url": "https://llava.hliu.cc/file=/nobackup/haotian/tmp/gradio 4b3f249dd60fab9dcf361035bb95cfb9ed680bf4/Expenses Tracker.jpg",
+      "orig_name": "Expenses Tracker.jpg"
+    },
+    "Default"
+  ],
+  "fn_index": 9,
+  "session_hash": "ec2walcbadh"
 }
 ```
 
 Add the parameters
+
 > POST /queue/join?
+
 ```json
 {
-    "data": [
-        null,
-        "llava-v1.6-34b",
-        0.1,
-        1.0,
-        256
-    ],
-    "fn_index": 10,
-    "session_hash": "ec2walcbadh"
+  "data": [null, "llava-v1.6-34b", 0.1, 1.0, 256],
+  "fn_index": 10,
+  "session_hash": "ec2walcbadh"
 }
 ```
 
 Get the response
+
 > GET /queue/data?session_hash=ec2walcbadh
 
 ```json
 {
-    "msg": "process_completed",
-    "output": {
-        "data": [
-            null,
-            [
-                [
-					"",
-                    "Expense tracker"
-                ]
-            ],
-        ],
-        "is_generating": true,
-        "duration": 0.12835431098937988,
-        "average_duration": 0.7358614400381713
-    },
-    "success": true
+  "msg": "process_completed",
+  "output": {
+    "data": [null, [["", "Expense tracker"]]],
+    "is_generating": true,
+    "duration": 0.12835431098937988,
+    "average_duration": 0.7358614400381713
+  },
+  "success": true
 }
 ```
 
@@ -156,7 +151,7 @@ Get the response
 
 Here also the steps are very simple. First goto https://ollama.com. Download ollama and install on your system. To check it everything working goto http://localhost:11434 and you will see **"Ollama is running"**.
 
-Now using your terminal run this commend 
+Now using your terminal run this commend
 
 > ollama run llava
 
@@ -187,7 +182,7 @@ prompt = "Extract text from the image and print it in the below format. For the 
     "tags": [
         "psychology"
     ]
-}) 
+})
 
 print("\nPrompt:\n" + prompt)
 
@@ -214,26 +209,19 @@ Here is the output.
 
 ```json
 {
-	"id": "20",
-	"question": "Q9",
-	"options": [
-		"The process by which a neutral stimulus becomes associated with a conditioned response is known as:",
-		"a) Generalization",
-		"b) Discrimination",
-		"c) Extinction",
-		"d) Acquisition"
-	],
-	"answer": "3",
-	"tags": [
-		"psychology"
-	]
+  "id": "20",
+  "question": "Q9",
+  "options": ["The process by which a neutral stimulus becomes associated with a conditioned response is known as:", "a) Generalization", "b) Discrimination", "c) Extinction", "d) Acquisition"],
+  "answer": "3",
+  "tags": ["psychology"]
 }
 ```
+
 Here you can see the response it a little bit messed up.
 
 ### Adding Example for Onshot Learning
 
-So I give a example input image and example output json. The code will look something like this. 
+So I give a example input image and example output json. The code will look something like this.
 
 ```python
 import ollama
@@ -288,19 +276,11 @@ Here is the output.
 
 ```json
 {
-	"id": "20",
-	"question": "Q9",
-	"options": [
-		"The process by which a neutral stimulus becomes associated with a conditioned response is known as:",
-		"a) Generalization",
-		"b) Discrimination",
-		"c) Extinction",
-		"d) Acquisition"
-	],
-	"answer": "3",
-	"tags": [
-		"psychology"
-	]
+  "id": "20",
+  "question": "Q9",
+  "options": ["The process by which a neutral stimulus becomes associated with a conditioned response is known as:", "a) Generalization", "b) Discrimination", "c) Extinction", "d) Acquisition"],
+  "answer": "3",
+  "tags": ["psychology"]
 }
 ```
 
@@ -365,7 +345,8 @@ for i in range(1,11):
 with open(f"./data/total.json", "w") as json_file:
     json_file.write(totalResponse)
 ```
-for the code part you have to change just 
+
+for the code part you have to change just
 
 > model='llava' -> model='llava:13b'
 
@@ -374,25 +355,22 @@ added a for loop for iterate over multiple images
 Here is the final output
 
 ```json
-[{
-	"question": "The ability of the human mind to generate hypotheses in a variety of problem situations given only that they are known as",
-	"options": [
-		"Cognitive Memory",
-		"Convergent Production",
-		"Divergent Production",
-		"Mediation"
-	],
-	"answer": 3,
-	"tags": [
-		"psychology"
-	]
-}]
+[
+  {
+    "question": "The ability of the human mind to generate hypotheses in a variety of problem situations given only that they are known as",
+    "options": ["Cognitive Memory", "Convergent Production", "Divergent Production", "Mediation"],
+    "answer": 3,
+    "tags": ["psychology"]
+  }
+]
 ```
 
 ## Summery
-Here are some pros and cons of this strategy 
+
+Here are some pros and cons of this strategy
 
 **Pros**
+
 <aside>
 
 - Private
@@ -401,6 +379,7 @@ Here are some pros and cons of this strategy
 </aside>
 
 **Cons**
+
 <aside>
 
 - Hardware depended performance (Generally Slow)

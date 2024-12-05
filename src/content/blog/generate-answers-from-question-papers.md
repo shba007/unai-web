@@ -1,9 +1,9 @@
 ---
-title: "Generate answers from question papers using AI"
+title: 'Generate answers from question papers using AI'
 description: "How can you get answers to your previous year's question paper using AI?"
-pubDate: "Aug 19 2023"
-updatedDate: "Aug 26 2023"
-heroImage: "/blog-1/hero.jpg"
+pubDate: 'Aug 19 2023'
+updatedDate: 'Aug 26 2023'
+heroImage: '/blog-1/hero.jpg'
 ---
 
 # How can you get answers to your previous year's question paper using AI?
@@ -46,12 +46,10 @@ Here we can see the explanation is too long. lets try a prompt
 We now use a prompt with format
 
 > Answer the question and follow the instructions
-> 
+>
 > Q. [Question] <br/>
 > A. [provide only the answer] <br/>
 > E. [provide a very short and concise explanation] <br/>
-> 
->
 
 <aside>
 <img src="https://www.notion.so/icons/light-bulb_yellow.svg" alt="/icons/light-bulb_yellow.svg" /> 
@@ -112,10 +110,9 @@ Here we can see the ai is give too long answer. Let’s try a prompt
 ### Case 2.1 - Using Word Limiting Prompt
 
 > Answer the question and follow the instructions
-> 
+>
 > Q. [ Question ] <br/>
 > A. [ provide a answer within 30 words]
->
 
 <aside>
    <img src="https://www.notion.so/icons/light-bulb_yellow.svg" alt="/icons/light-bulb_yellow.svg" />
@@ -181,22 +178,21 @@ As we can see the AI is again being too verbose
 ### Case 3.1 - Prompt with Condition
 
 > [ All The Questions ]
-> 
+>
 > Answer the questions and follow the instructions:
-> 
+>
 > M.C.Q and S.A.Q are provided, determine which questions are multiple choice questions (M.C.Q) and which are short answer type question (S.A.Q) among all the questions and give the question index
-> 
+>
 > if the question is (M.C.Q) then:
 > "[index] - [type]
 > Q. [provide the question]
 > A. [provide answer]
 > Explanation. [provide short explanation here]"
-> 
+>
 > if the question is (S.A.Q) then:
 > "[index] - [type]
 > Q.[provide the question]
 > A. [provide answer within 30 words]"
->
 
 <aside>
 <img src="https://www.notion.so/icons/light-bulb_yellow.svg" alt="/icons/light-bulb_yellow.svg" />
