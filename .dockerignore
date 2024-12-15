@@ -1,3 +1,10 @@
+.vs
+.vscode
+
+.changeset
+.git
+.github
+
 # Astro dev/build outputs
 .astro
 dist
@@ -18,3 +25,7 @@ logs
 .env
 .env.*
 !.env.example
+
+# Docker files
+.dockerignore
+Dockerfile
