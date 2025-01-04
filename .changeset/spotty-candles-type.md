@@ -1,5 +1,5 @@
 ---
-'ai-guide': patch
+'unai-web': patch
 ---
 
 chore: add docker configuration files and scripts

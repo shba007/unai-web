@@ -9,12 +9,14 @@ node_modules
 logs
 *.log
 
+# Testing
+coverage
+
 # Misc
 .DS_Store
 .fleet
 .idea
 
-# Local env files
-.env
-.env.*
+# Env files
+.env*
 !.env.example

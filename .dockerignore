@@ -1,9 +1,7 @@
-.vs
-.vscode
-
-.changeset
+# Git/Github
 .git
 .github
+.gitignore
 
 # Astro dev/build outputs
 .astro
@@ -16,16 +14,18 @@ node_modules
 logs
 *.log
 
+# Testing
+coverage
+
 # Misc
 .DS_Store
 .fleet
 .idea
 
-# Local env files
-.env
-.env.*
+# Env files
+.env*
 !.env.example
 
-# Docker files
+# Dockerfile
 .dockerignore
 Dockerfile

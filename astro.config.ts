@@ -1,17 +1,19 @@
+// @ts-check
 import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
+
+import tailwind from '@astrojs/tailwind'
 import icon from 'astro-icon'
 import pwa from '@vite-pwa/astro'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ai-guide.shirsendu-bairagi.dev',
+  site: process.env.PUBLIC_BASE_URL ?? 'http://example.com',
   integrations: [
-    tailwind(),
     mdx(),
     sitemap(),
+    tailwind(),
     icon(),
     pwa({
       scope: '/',
@@ -166,10 +168,6 @@ export default defineConfig({
           },
         ],
         navigateFallback: undefined,
-      },
-      client: {
-        installPrompt: true,
-        periodicSyncForUpdates: 3600,
       },
       devOptions: {
         type: 'module',
