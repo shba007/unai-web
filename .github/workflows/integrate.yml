@@ -6,7 +6,7 @@ on:
       - develop
 
 env:
-  PUBLIC_BASE_URL: 'https://ai-guide.shirsendu-bairagi.dev'
+  PUBLIC_BASE_URL: 'https://unai.shirsendu-bairagi.dev'
 
 jobs:
   build:
