@@ -24,7 +24,6 @@ coverage
 
 # Env files
 .env*
-!.env.example
 
 # Dockerfile
 .dockerignore
